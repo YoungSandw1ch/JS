@@ -20,7 +20,7 @@ const remove = key => {
   localStorage.removeItem(key);
 };
 
-export {
+export default {
   save,
   load,
   remove,

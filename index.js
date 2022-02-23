@@ -1,16 +1,12 @@
-import { save, load, remove } from "./js/storage.js";
-
-const saveMethod = save;
-console.log(saveMethod);
-
+import patern from "./js/storage.js";
 
 localStorage.setItem("ui-theme", "light");
 localStorage.setItem("name", "Mango");
 
-save("leg", 4);
-console.log(load("leg"));
-remove("leg");
-remove("age");
+patern.save("leg", 4);
+console.log(patern.load("leg"));
+patern.remove("leg");
+patern.remove("age");
 
 
 console.log(localStorage.getItem("leg"));
