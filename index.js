@@ -10,6 +10,7 @@ localStorage.setItem("name", "Mango");
 save("leg", 4);
 console.log(load("leg"));
 remove("leg");
+remove("age");
 
 
 console.log(localStorage.getItem("leg"));
