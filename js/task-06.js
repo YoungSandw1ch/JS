@@ -1,12 +1,11 @@
-// Напиши скрипт, который при потере фокуса на инпуте (событие blur), проверяет его содержимое на правильное количество введённых символов.
-
-// Сколько символов должно быть в инпуте, указывается в его атрибуте data-length.
-// Если введено подходящее количество символов, то border инпута становится зелёным, если неправильное - красным.
-// Для добавления стилей, используй CSS-классы valid и invalid, которые мы уже добавили в исходные файлы задания.
-
 const inputRef = document.querySelector('#validation-input');
+const textMarcup = `
+  <p class="text">You enter: <span>0</span> symbols</p>
+`
+inputRef.insertAdjacentHTML('afterend', textMarcup);
 
 inputRef.addEventListener('blur', onInputBlur);
+inputRef.addEventListener('input', onInputLength);
 
 function onInputBlur(event) {
   if (event.currentTarget.value.length === +inputRef.dataset.length) {
@@ -17,6 +16,19 @@ function onInputBlur(event) {
     inputRef.classList.add('invalid');
     inputRef.classList.remove('valid');
   }
-  console.log(event.currentTarget.value.length);
-  console.log(inputRef.dataset.length);
+}
+
+function onInputLength(event) {
+  const textRef = document.querySelector('.text span');
+  const length = event.currentTarget.value.length;
+  
+  textRef.textContent = length;
+
+  if (length === 6) {
+    textRef.classList.add('green');
+    textRef.classList.remove('red');
+  } else {
+    textRef.classList.add('red');
+    textRef.classList.remove('green');
+  }
 }
