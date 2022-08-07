@@ -2,20 +2,6 @@ const form = document.querySelector('.login-form');
 
 form.addEventListener('submit', onFormSubmit);
 
-// function onFormSubmit(e) {
-//   e.preventDefault();
-//   const { elements: { email, password } } = e.currentTarget;
-
-//   if (!password.value || !email.value) return alert("Вы должны заполнить все поля");
-//   const values = {
-//     email: email.value,
-//     password: password.value,
-//   }
-
-//   console.log(values);
-//   e.currentTarget.reset();
-// }
-
 /*
 *==========решение через formData====================
 */
@@ -34,3 +20,18 @@ function onFormSubmit(e) {
   console.log(result);
   e.currentTarget.reset();
 }
+
+// function onFormSubmit(e) {
+//   e.preventDefault();
+//   const { elements: { email, password } } = e.currentTarget;
+
+//   if (!password.value || !email.value) return alert("Вы должны заполнить все поля");
+//   const values = {
+//     email: email.value,
+//     password: password.value,
+//   }
+
+//   console.log(values);
+//   e.currentTarget.reset();
+// }
+
